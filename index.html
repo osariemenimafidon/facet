@@ -1,0 +1,392 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="FACET — Fuel-Adaptive Control Evidence &amp; Transferability. An independent research program on fuel-property-adaptive diesel injection control and the verification evidence that would let it reach production.">
+<meta name="author" content="Osariemen Imafidon">
+<link rel="canonical" href="https://odimafid.github.io/facet/">
+<meta property="og:title" content="FACET Research Program">
+<meta property="og:description" content="An engine is certified on one fuel and then runs for thousands of hours on whatever the market supplies. The fuels now sold into the same tank no longer share a property envelope.">
+<meta property="og:type" content="website">
+<style>
+html{color-scheme:light dark}
+body{margin:0}
+img{max-width:100%}
+[hidden]{display:none!important}
+</style>
+<title>FACET Research Program</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+:root{
+  color-scheme:light;
+  --paper:#f6f5f2; --card:#fffefc; --sunk:#edebe6;
+  --ink:#1a1814; --ink-2:#4b463e; --ink-3:#7c7466;
+  --rule:#ddd9d0; --rule-2:#c8c2b6;
+  --petro:#2a78d6;      /* petroleum diesel */
+  --para:#eb6834;       /* paraffinic renewable */
+  --gap:#9a8f7c;
+  --mark:#8a5a12; --mark-bg:#fbf2e2;
+  --serif:"Source Serif 4",Georgia,"Times New Roman",serif;
+  --mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    color-scheme:dark;
+    --paper:#14130f; --card:#1c1a16; --sunk:#232019;
+    --ink:#f2efe8; --ink-2:#bdb6a8; --ink-3:#8b8376;
+    --rule:#2c2822; --rule-2:#3d372e;
+    --petro:#3987e5; --para:#d95926; --gap:#6d6555;
+    --mark:#e0ab5c; --mark-bg:#241c0d;
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --paper:#14130f; --card:#1c1a16; --sunk:#232019;
+  --ink:#f2efe8; --ink-2:#bdb6a8; --ink-3:#8b8376;
+  --rule:#2c2822; --rule-2:#3d372e;
+  --petro:#3987e5; --para:#d95926; --gap:#6d6555;
+  --mark:#e0ab5c; --mark-bg:#241c0d;
+}
+*{box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font-family:var(--serif);
+  margin:0;font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased}
+.wrap{max-width:820px;margin:0 auto;padding:0 22px 80px}
+h1,h2,h3{text-wrap:balance;margin:0;line-height:1.2}
+.mono{font-family:var(--mono);font-variant-numeric:tabular-nums}
+
+/* masthead */
+header.top{padding-block:64px 0}
+.wordmark{font-family:var(--mono);font-size:44px;font-weight:600;letter-spacing:.12em;
+  line-height:1;color:var(--ink)}
+.expand{font-family:var(--mono);font-size:12.5px;letter-spacing:.13em;text-transform:uppercase;
+  color:var(--ink-3);margin-top:14px}
+.byline{font-size:15px;color:var(--ink-2);margin-top:22px;
+  padding-top:18px;border-top:1px solid var(--rule)}
+.byline a{color:var(--ink-2)}
+.thesis{font-size:25px;line-height:1.38;margin:38px 0 0;font-weight:400;
+  color:var(--ink);letter-spacing:-.005em}
+.thesis b{font-weight:600}
+
+/* the hero diagram */
+.figure{background:var(--card);border:1px solid var(--rule);border-radius:4px;
+  padding:26px 26px 20px;margin:36px 0 0}
+.figure figcaption{font-size:14px;color:var(--ink-2);margin-top:18px;
+  padding-top:15px;border-top:1px solid var(--rule);line-height:1.55}
+.figure figcaption strong{color:var(--ink);font-weight:600}
+svg{display:block;max-width:100%;height:auto;overflow:visible}
+
+h2.head{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--ink-3);font-weight:600;margin:58px 0 18px;padding-bottom:10px;
+  border-bottom:1px solid var(--rule)}
+p{margin:0 0 17px;max-width:66ch}
+p.lead{font-size:18.5px}
+.small{font-size:14.5px;color:var(--ink-2)}
+
+/* mechanism table */
+table{border-collapse:collapse;width:100%;font-size:15px;margin:0 0 8px}
+th{text-align:left;font-family:var(--mono);font-size:10.5px;letter-spacing:.09em;
+  text-transform:uppercase;color:var(--ink-3);font-weight:600;padding:0 14px 9px 0;
+  border-bottom:1px solid var(--rule-2)}
+td{padding:13px 14px 13px 0;border-bottom:1px solid var(--rule);vertical-align:top;
+  color:var(--ink-2)}
+td:first-child{color:var(--ink);font-weight:600;white-space:nowrap}
+td strong{color:var(--ink)}
+.tablewrap{overflow-x:auto}
+
+/* questions */
+.q{background:var(--card);border:1px solid var(--rule);border-radius:4px;
+  padding:22px 24px;margin-bottom:14px}
+.q.core{border-color:var(--rule-2);background:var(--sunk)}
+.q .tag{font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:.1em;
+  color:var(--ink-3);text-transform:uppercase}
+.q h3{font-size:19px;font-weight:600;margin:9px 0 0;letter-spacing:-.01em}
+.q p{font-size:15.5px;margin:11px 0 0;color:var(--ink-2)}
+.q .centre{display:inline-block;font-family:var(--mono);font-size:10.5px;font-weight:600;
+  letter-spacing:.08em;text-transform:uppercase;color:var(--mark);background:var(--mark-bg);
+  border:1px solid color-mix(in srgb,var(--mark) 35%,transparent);
+  padding:3px 8px;border-radius:3px;margin-top:14px}
+
+/* commitments */
+ol.commit{list-style:none;padding:0;margin:0;counter-reset:c}
+ol.commit li{counter-increment:c;position:relative;padding:0 0 15px 40px;
+  font-size:15.5px;color:var(--ink-2);max-width:66ch}
+ol.commit li::before{content:counter(c,decimal-leading-zero);position:absolute;left:0;top:2px;
+  font-family:var(--mono);font-size:11.5px;font-weight:600;color:var(--ink-3)}
+ol.commit b{color:var(--ink);font-weight:600}
+
+ul.falsify{list-style:none;padding:0;margin:0}
+ul.falsify li{padding:0 0 14px 22px;position:relative;font-size:15.5px;color:var(--ink-2);max-width:66ch}
+ul.falsify li::before{content:"";position:absolute;left:2px;top:11px;width:7px;height:1px;
+  background:var(--rule-2)}
+ul.falsify b{color:var(--ink);font-weight:600}
+
+/* portfolio */
+.pf{border:1px solid var(--rule);border-radius:4px;overflow:hidden;background:var(--card)}
+.pf-row{display:grid;grid-template-columns:1fr auto;gap:8px 18px;padding:16px 20px;
+  border-bottom:1px solid var(--rule);align-items:start}
+.pf-row:last-child{border-bottom:0}
+.pf-name{font-family:var(--mono);font-size:14.5px;font-weight:600;color:var(--ink)}
+.pf-what{font-size:14.5px;color:var(--ink-2);margin-top:4px;line-height:1.5}
+.status{font-family:var(--mono);font-size:10px;font-weight:600;letter-spacing:.07em;
+  text-transform:uppercase;padding:4px 9px;border-radius:3px;white-space:nowrap;
+  border:1px solid var(--rule-2);color:var(--ink-3);background:var(--sunk)}
+.status.draft{color:var(--mark);background:var(--mark-bg);
+  border-color:color-mix(in srgb,var(--mark) 35%,transparent)}
+
+.state{border:1px solid var(--rule-2);background:var(--sunk);border-radius:4px;
+  padding:22px 24px;margin-top:22px}
+.state p{font-size:15.5px;margin:0;color:var(--ink-2)}
+.state b{color:var(--ink);font-weight:600}
+
+footer{margin-top:56px;padding-top:20px;border-top:1px solid var(--rule);
+  font-size:13.5px;color:var(--ink-3);line-height:1.6}
+footer h2{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--ink-3);font-weight:600;margin-bottom:11px}
+footer ol{padding-left:20px;margin:0}
+footer li{margin-bottom:7px;max-width:74ch}
+footer a{color:var(--ink-2)}
+a{text-decoration-thickness:1px;text-underline-offset:2px}
+:focus-visible{outline:2px solid var(--petro);outline-offset:2px}
+@media (max-width:640px){
+  .wordmark{font-size:33px}
+  .thesis{font-size:21px}
+  header.top{padding-block:42px 0}
+  .pf-row{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+
+
+<div class="wrap">
+  <header class="top">
+    <div class="wordmark">FACET</div>
+    <div class="expand">Fuel-Adaptive Control Evidence &amp; Transferability</div>
+    <p class="byline">An independent research program · founded September 2026<br>
+      Osariemen Imafidon, sole investigator ·
+      <a href="https://orcid.org/0009-0006-3069-4674">ORCID 0009-0006-3069-4674</a><br>
+      <span class="small">Built entirely from openly available federal data. Self-funded. Published openly.</span></p>
+
+    <p class="thesis">A compression-ignition engine is certified on one fuel and then
+      operated, for thousands of hours, on whatever the market supplies. <b>The fuels now
+      sold into the same tank no longer share a property envelope.</b></p>
+  </header>
+
+  <figure class="figure">
+    <div id="bands"></div>
+    <figcaption>Density at 15 °C, as specified. <strong>EN 590</strong> covers petroleum
+      automotive diesel; <strong>EN 15940</strong> covers the paraffinic fuels sold as
+      renewable diesel. The temperate-grade ranges are separated by a <strong>20 kg/m³
+      band that neither specification occupies</strong>. Arctic EN 590 grades reach down to
+      800.0 kg/m³, exactly meeting the EN 15940 ceiling — closing the gap to zero without
+      overlapping it. A fuel that is legally and commercially "diesel" can therefore arrive
+      at the injector <strong>5–9% less dense</strong> than the fuel the engine was
+      calibrated and certified on.</figcaption>
+  </figure>
+
+  <h2 class="head">Why density is not a detail</h2>
+  <p>Fuel injection systems meter <em>volume</em>. The mass actually delivered per
+    injection scales with density, so a fuel outside the calibrated envelope produces a
+    fuelling error the control system has no reason to know about. Two further properties
+    propagate into the same combustion event:</p>
+
+  <div class="tablewrap">
+  <table>
+    <thead><tr><th>Property</th><th>Mechanism</th><th>Consequence</th></tr></thead>
+    <tbody>
+      <tr><td>Density</td>
+        <td>Injection is volumetric; delivered mass scales with density</td>
+        <td>Fuelling error — torque and emissions shift together</td></tr>
+      <tr><td>Bulk modulus</td>
+        <td>Governs pressure-wave propagation through line and rail</td>
+        <td>Injection <strong>timing</strong> shifts; documented for biodiesel in
+            pump-line-nozzle systems</td></tr>
+      <tr><td>Cetane number</td>
+        <td>Sets ignition delay</td>
+        <td>Premixed and diffusion burn fractions change; NOx and PM move in opposition</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <p class="small">The ignition-delay effect is not a constant a calibrator can subtract.
+    Reported differences between B7 and neat HVO run to roughly <span class="mono">2.5 ms</span>
+    at 550 °C, narrowing to about <span class="mono">0.7 ms</span> at 650 °C — the error is
+    itself temperature-dependent.</p>
+
+  <h2 class="head">And the margin is closing</h2>
+  <p>CARB's draft Tier 5 off-road proposal, released February 2026, would cut NOx by up to
+    <strong>90%</strong> and PM by up to <strong>75%</strong> against current EPA Tier 4
+    final standards, phasing in across <strong>2031–2036</strong>. Standards set that close
+    to the floor leave very little headroom for an uncompensated fuel-property shift. The
+    proposal is not yet adopted.</p>
+
+  <h2 class="head">The two questions</h2>
+
+  <div class="q">
+    <div class="tag">Q1 · Technical</div>
+    <h3>Can injection control adapt to the fuel it is actually burning?</h3>
+    <p>Closely enough to close the certified-to-in-service gap — and what must it sense to
+      do so? Direct property measurement, inference from combustion feedback, or a declared
+      blend input?</p>
+  </div>
+
+  <div class="q core">
+    <div class="tag">Q2 · Methodological</div>
+    <h3>What evidence would let such control reach production?</h3>
+    <p>And under what criteria can verification evidence generated for one engine program be
+      legitimately reused for another? Adaptive-control concepts are not scarce in the
+      literature. What is scarce is an accepted account of what evidence is <em>sufficient</em>,
+      and of when cross-program reuse is defensible rather than merely convenient. The barrier
+      between a working concept and a production calibration is the cost and structure of
+      verification evidence, not the novelty of the control law.</p>
+    <span class="centre">The program's centre of gravity</span>
+  </div>
+
+  <h2 class="head">Method commitments</h2>
+  <p class="small">Constraints accepted in advance, not aspirations.</p>
+  <ol class="commit">
+    <li><b>Open federal data only.</b> Every result must be reproducible by someone with no
+      access to proprietary engine data, test cells, or manufacturer cooperation.</li>
+    <li><b>Provenance at every fetch.</b> Source URL, retrieval date, byte count and SHA-256
+      are logged before a file is used.</li>
+    <li><b>No number is typed by hand.</b> Every figure in every document is interpolated from
+      a statistics file the pipeline writes, so prose cannot drift from data.</li>
+    <li><b>A verification gate precedes publication.</b> Nothing is published until the
+      investigator has personally reproduced the pipeline and spot-checked outputs against the
+      primary source.</li>
+    <li><b>Findings are published whether or not they are favourable</b> — including negative
+      results and defects found in public data.</li>
+    <li><b>Self-funded, no sponsor.</b> There is no party whose interests a result could be
+      shaped to serve.</li>
+  </ol>
+
+  <h2 class="head">What would make this program wrong</h2>
+  <p class="small">Stated in advance, so it can fail honestly.</p>
+  <ul class="falsify">
+    <li>If in-service fuel property variation proves <b>small relative to existing calibration
+      tolerance</b>, the motivating premise collapses and the program should say so.</li>
+    <li>If adaptive control turns out to be <b>routinely deployed already</b> and simply
+      undocumented in public sources, the contribution reduces to documentation.</li>
+    <li>If cross-program evidence reuse proves <b>unformalisable</b> — every engine program
+      genuinely a special case — then Q2 has a negative answer, which is itself worth
+      publishing.</li>
+  </ul>
+
+  <h2 class="head">Projects</h2>
+  <div class="pf">
+    <div class="pf-row">
+      <div><div class="pf-name">CIDEX</div>
+        <div class="pf-what">Harmonized engine-family-level panel of EPA compression-ignition
+          certification data — the evidence base both questions draw on.</div></div>
+      <span class="status draft">Draft · unverified</span>
+    </div>
+    <div class="pf-row">
+      <div><div class="pf-name">Fuel Divergence Atlas</div>
+        <div class="pf-what">State-level estimates of in-service fuel property divergence.
+          Sizes the problem this page opens with.</div></div>
+      <span class="status">Not started</span>
+    </div>
+    <div class="pf-row">
+      <div><div class="pf-name">ADCVI</div>
+        <div class="pf-what">Evidence map of adaptive and learning-based diesel control,
+          scored on a published validation-maturity rubric. Q2 — what evidence exists today.</div></div>
+      <span class="status">Not started</span>
+    </div>
+    <div class="pf-row">
+      <div><div class="pf-name">Fuel-Related Failure Corpus</div>
+        <div class="pf-what">Labelled corpus of fuel-related failure modes drawn from open
+          defect records. Q1 — whether the gap shows up in service.</div></div>
+      <span class="status">Not started</span>
+    </div>
+    <div class="pf-row">
+      <div><div class="pf-name">certdata · enginefamily</div>
+        <div class="pf-what">Open tooling for EPA certification records and engine-family name
+          decoding.</div></div>
+      <span class="status">Not started</span>
+    </div>
+  </div>
+
+  <div class="state">
+    <p><b>Current state — September 2026.</b> The program is newly founded. CIDEX v1.0 is
+      built and passes its integrity checks but has <b>not</b> completed the verification gate
+      and is <b>not</b> published. No DOI has been minted. No manuscript has been submitted.
+      This page describes a research agenda and a first dataset in draft, and claims nothing
+      further.</p>
+  </div>
+
+  <footer>
+    <h2>Sources</h2>
+    <ol>
+      <li>EN 590 and EN 15940 specification limits —
+        <a href="https://dieselnet.com/standards/eu/fuel_automotive.php">DieselNet, EU automotive diesel fuel standards</a>.</li>
+      <li>CARB draft Tier 5 off-road proposal, February 2026 —
+        <a href="https://dieselnet.com/news/2026/02carb.php">DieselNet</a>.</li>
+      <li>HVO ignition-delay and derived-cetane measurements —
+        <a href="https://www.mdpi.com/1996-1073/18/22/5962">Performance of Hydrotreated Vegetable Oil–Diesel Blends: Ignition and Combustion Insights, Energies 18(22):5962</a>.</li>
+      <li>Bulk modulus and injection timing —
+        <a href="https://pubs.acs.org/doi/10.1021/ef049880j">The Impact of the Bulk Modulus of Diesel Fuels on Fuel Injection Timing, Energy &amp; Fuels</a>.</li>
+      <li>Engine certification data — US EPA annual certification data for heavy-duty highway
+        and nonroad compression-ignition engines.</li>
+    </ol>
+  </footer>
+</div>
+
+<script>
+(function () {
+  const NS = 'http://www.w3.org/2000/svg';
+  const el = (t, a = {}, p) => { const e = document.createElementNS(NS, t);
+    for (const k in a) e.setAttribute(k, a[k]); if (p) p.appendChild(e); return e; };
+
+  const W = 740, H = 208, L = 18, R = 18, AX = H - 44;
+  const d0 = 758, d1 = 852;
+  const X = d => L + (d - d0) / (d1 - d0) * (W - L - R);
+
+  const svg = el('svg', { viewBox: `0 0 ${W} ${H}`, role: 'img', 'aria-label':
+    'Density ranges at 15 degrees Celsius: EN 15940 paraffinic diesel spans 765 to 800 kilograms per cubic metre; EN 590 temperate petroleum diesel spans 820 to 845. The ranges do not overlap, leaving a 20 unit gap between 800 and 820.' });
+
+  // the unoccupied band
+  el('rect', { x: X(800), y: 26, width: X(820) - X(800), height: AX - 26,
+    fill: 'var(--gap)', opacity: .13 }, svg);
+  [800, 820].forEach(v => el('line', { x1: X(v), x2: X(v), y1: 26, y2: AX,
+    stroke: 'var(--gap)', 'stroke-width': 1, 'stroke-dasharray': '3 3', opacity: .65 }, svg));
+
+  el('text', { x: (X(800) + X(820)) / 2, y: 20, 'text-anchor': 'middle',
+    fill: 'var(--ink-3)', 'font-size': 11, 'font-family': 'var(--mono)',
+    'font-weight': 600 }, svg).textContent = '20 kg/m³';
+  el('text', { x: (X(800) + X(820)) / 2, y: AX + 30, 'text-anchor': 'middle',
+    fill: 'var(--ink-3)', 'font-size': 10.5, 'font-family': 'var(--mono)' }, svg)
+    .textContent = 'neither spec';
+
+  // Labels sit INSIDE each bar: the caption already names what each spec covers,
+  // and an outside label on the right-hand band runs past the drawing bounds.
+  const band = (y, lo, hi, color, name) => {
+    el('rect', { x: X(lo), y, width: X(hi) - X(lo), height: 30, fill: color, rx: 3 }, svg);
+    el('text', { x: X(lo) + 11, y: y + 19.5, fill: '#ffffff', 'font-size': 12.5,
+      'font-family': 'var(--mono)', 'font-weight': 600 }, svg)
+      .textContent = `${name} · ${lo}–${hi}`;
+  };
+
+  band(40, 765, 800, 'var(--para)', 'EN 15940');
+  band(88, 820, 845, 'var(--petro)', 'EN 590');
+
+  // axis
+  el('line', { x1: L, x2: W - R, y1: AX, y2: AX, stroke: 'var(--rule-2)',
+    'stroke-width': 1 }, svg);
+  [760, 780, 800, 820, 840].forEach(v => {
+    el('line', { x1: X(v), x2: X(v), y1: AX, y2: AX + 5, stroke: 'var(--rule-2)',
+      'stroke-width': 1 }, svg);
+    el('text', { x: X(v), y: AX + 17, 'text-anchor': 'middle', fill: 'var(--ink-3)',
+      'font-size': 10.5, 'font-family': 'var(--mono)' }, svg).textContent = v;
+  });
+  el('text', { x: W - R, y: AX + 33, 'text-anchor': 'end', fill: 'var(--ink-3)',
+    'font-size': 10.5, 'font-family': 'var(--serif)' }, svg)
+    .textContent = 'density at 15 °C  (kg/m³)';
+
+  document.getElementById('bands').appendChild(svg);
+})();
+</script>
+
+</body>
+</html>
