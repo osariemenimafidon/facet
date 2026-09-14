@@ -11,6 +11,8 @@ Founded September 2026 · Osariemen Imafidon, sole investigator
 
 Built entirely from openly available federal data. Self-funded. Published openly.
 
+**Program page: https://osariemenimafidon.github.io/facet/**
+
 ---
 
 ## The thesis in one fact

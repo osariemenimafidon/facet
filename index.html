@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="description" content="FACET — Fuel-Adaptive Control Evidence &amp; Transferability. An independent research program on fuel-property-adaptive diesel injection control and the verification evidence that would let it reach production.">
 <meta name="author" content="Osariemen Imafidon">
-<link rel="canonical" href="https://odimafid.github.io/facet/">
+<link rel="canonical" href="https://osariemenimafidon.github.io/facet/">
 <meta property="og:title" content="FACET Research Program">
 <meta property="og:description" content="An engine is certified on one fuel and then runs for thousands of hours on whatever the market supplies. The fuels now sold into the same tank no longer share a property envelope.">
 <meta property="og:type" content="website">
@@ -175,7 +175,32 @@ a{text-decoration-thickness:1px;text-underline-offset:2px}
   </header>
 
   <figure class="figure">
-    <div id="bands"></div>
+    <svg viewBox="0 0 740 208" role="img" aria-label="Density at 15 degrees Celsius. EN 15940 paraffinic renewable diesel spans 765 to 800 kilograms per cubic metre. EN 590 temperate petroleum diesel spans 820 to 845. The two ranges do not overlap: a 20 kilogram per cubic metre band between 800 and 820 belongs to neither specification.">
+  <rect x="332.6" y="26" width="149.8" height="138" fill="var(--gap)" opacity=".13"></rect>
+  <line x1="332.6" x2="332.6" y1="26" y2="164" stroke="var(--gap)" stroke-width="1" stroke-dasharray="3 3" opacity=".65"></line>
+  <line x1="482.3" x2="482.3" y1="26" y2="164" stroke="var(--gap)" stroke-width="1" stroke-dasharray="3 3" opacity=".65"></line>
+  <text x="407.5" y="20" text-anchor="middle" fill="var(--ink-3)" font-size="11" font-family="var(--mono)" font-weight="600">20 kg/m³</text>
+  <text x="407.5" y="194" text-anchor="middle" fill="var(--ink-3)" font-size="10.5" font-family="var(--mono)">neither spec</text>
+
+  <rect x="70.4" y="40" width="262.1" height="30" fill="var(--para)" rx="3"></rect>
+  <text x="81.4" y="59.5" fill="#ffffff" font-size="12.5" font-family="var(--mono)" font-weight="600">EN 15940 · 765–800</text>
+
+  <rect x="482.3" y="88" width="187.2" height="30" fill="var(--petro)" rx="3"></rect>
+  <text x="493.3" y="107.5" fill="#ffffff" font-size="12.5" font-family="var(--mono)" font-weight="600">EN 590 · 820–845</text>
+
+  <line x1="18" x2="722" y1="164" y2="164" stroke="var(--rule-2)" stroke-width="1"></line>
+  <line x1="33" x2="33" y1="164" y2="169" stroke="var(--rule-2)" stroke-width="1"></line>
+  <text x="33" y="181" text-anchor="middle" fill="var(--ink-3)" font-size="10.5" font-family="var(--mono)">760</text>
+  <line x1="182.8" x2="182.8" y1="164" y2="169" stroke="var(--rule-2)" stroke-width="1"></line>
+  <text x="182.8" y="181" text-anchor="middle" fill="var(--ink-3)" font-size="10.5" font-family="var(--mono)">780</text>
+  <line x1="332.6" x2="332.6" y1="164" y2="169" stroke="var(--rule-2)" stroke-width="1"></line>
+  <text x="332.6" y="181" text-anchor="middle" fill="var(--ink-3)" font-size="10.5" font-family="var(--mono)">800</text>
+  <line x1="482.3" x2="482.3" y1="164" y2="169" stroke="var(--rule-2)" stroke-width="1"></line>
+  <text x="482.3" y="181" text-anchor="middle" fill="var(--ink-3)" font-size="10.5" font-family="var(--mono)">820</text>
+  <line x1="632.1" x2="632.1" y1="164" y2="169" stroke="var(--rule-2)" stroke-width="1"></line>
+  <text x="632.1" y="181" text-anchor="middle" fill="var(--ink-3)" font-size="10.5" font-family="var(--mono)">840</text>
+  <text x="722" y="197" text-anchor="end" fill="var(--ink-3)" font-size="10.5" font-family="var(--serif)">density at 15 °C  (kg/m³)</text>
+</svg>
     <figcaption>Density at 15 °C, as specified. <strong>EN 590</strong> covers petroleum
       automotive diesel; <strong>EN 15940</strong> covers the paraffinic fuels sold as
       renewable diesel. The temperate-grade ranges are separated by a <strong>20 kg/m³
@@ -332,61 +357,5 @@ a{text-decoration-thickness:1px;text-underline-offset:2px}
     </ol>
   </footer>
 </div>
-
-<script>
-(function () {
-  const NS = 'http://www.w3.org/2000/svg';
-  const el = (t, a = {}, p) => { const e = document.createElementNS(NS, t);
-    for (const k in a) e.setAttribute(k, a[k]); if (p) p.appendChild(e); return e; };
-
-  const W = 740, H = 208, L = 18, R = 18, AX = H - 44;
-  const d0 = 758, d1 = 852;
-  const X = d => L + (d - d0) / (d1 - d0) * (W - L - R);
-
-  const svg = el('svg', { viewBox: `0 0 ${W} ${H}`, role: 'img', 'aria-label':
-    'Density ranges at 15 degrees Celsius: EN 15940 paraffinic diesel spans 765 to 800 kilograms per cubic metre; EN 590 temperate petroleum diesel spans 820 to 845. The ranges do not overlap, leaving a 20 unit gap between 800 and 820.' });
-
-  // the unoccupied band
-  el('rect', { x: X(800), y: 26, width: X(820) - X(800), height: AX - 26,
-    fill: 'var(--gap)', opacity: .13 }, svg);
-  [800, 820].forEach(v => el('line', { x1: X(v), x2: X(v), y1: 26, y2: AX,
-    stroke: 'var(--gap)', 'stroke-width': 1, 'stroke-dasharray': '3 3', opacity: .65 }, svg));
-
-  el('text', { x: (X(800) + X(820)) / 2, y: 20, 'text-anchor': 'middle',
-    fill: 'var(--ink-3)', 'font-size': 11, 'font-family': 'var(--mono)',
-    'font-weight': 600 }, svg).textContent = '20 kg/m³';
-  el('text', { x: (X(800) + X(820)) / 2, y: AX + 30, 'text-anchor': 'middle',
-    fill: 'var(--ink-3)', 'font-size': 10.5, 'font-family': 'var(--mono)' }, svg)
-    .textContent = 'neither spec';
-
-  // Labels sit INSIDE each bar: the caption already names what each spec covers,
-  // and an outside label on the right-hand band runs past the drawing bounds.
-  const band = (y, lo, hi, color, name) => {
-    el('rect', { x: X(lo), y, width: X(hi) - X(lo), height: 30, fill: color, rx: 3 }, svg);
-    el('text', { x: X(lo) + 11, y: y + 19.5, fill: '#ffffff', 'font-size': 12.5,
-      'font-family': 'var(--mono)', 'font-weight': 600 }, svg)
-      .textContent = `${name} · ${lo}–${hi}`;
-  };
-
-  band(40, 765, 800, 'var(--para)', 'EN 15940');
-  band(88, 820, 845, 'var(--petro)', 'EN 590');
-
-  // axis
-  el('line', { x1: L, x2: W - R, y1: AX, y2: AX, stroke: 'var(--rule-2)',
-    'stroke-width': 1 }, svg);
-  [760, 780, 800, 820, 840].forEach(v => {
-    el('line', { x1: X(v), x2: X(v), y1: AX, y2: AX + 5, stroke: 'var(--rule-2)',
-      'stroke-width': 1 }, svg);
-    el('text', { x: X(v), y: AX + 17, 'text-anchor': 'middle', fill: 'var(--ink-3)',
-      'font-size': 10.5, 'font-family': 'var(--mono)' }, svg).textContent = v;
-  });
-  el('text', { x: W - R, y: AX + 33, 'text-anchor': 'end', fill: 'var(--ink-3)',
-    'font-size': 10.5, 'font-family': 'var(--serif)' }, svg)
-    .textContent = 'density at 15 °C  (kg/m³)';
-
-  document.getElementById('bands').appendChild(svg);
-})();
-</script>
-
 </body>
 </html>

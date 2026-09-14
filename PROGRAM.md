@@ -7,6 +7,9 @@ Osariemen Imafidon, sole investigator · ORCID 0009-0006-3069-4674 · Independen
 
 Built entirely from openly available federal data. Self-funded. Published openly.
 
+Program page: https://osariemenimafidon.github.io/facet/
+Repository: https://github.com/osariemenimafidon/facet
+
 ---
 
 ## 1. The problem
