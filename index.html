@@ -131,6 +131,8 @@ ul.falsify b{color:var(--ink);font-weight:600}
 .status{font-family:var(--mono);font-size:10px;font-weight:600;letter-spacing:.07em;
   text-transform:uppercase;padding:4px 9px;border-radius:3px;white-space:nowrap;
   border:1px solid var(--rule-2);color:var(--ink-3);background:var(--sunk)}
+.status.ok{color:var(--ok,#1a6b3c);background:var(--ok-bg,#e8f4ec);
+  border-color:color-mix(in srgb,var(--ok,#1a6b3c) 32%,transparent)}
 .status.draft{color:var(--mark);background:var(--mark-bg);
   border-color:color-mix(in srgb,var(--mark) 35%,transparent)}
 
@@ -305,13 +307,20 @@ a{text-decoration-thickness:1px;text-underline-offset:2px}
       <div><div class="pf-name">CIDEX</div>
         <div class="pf-what">Harmonized engine-family-level panel of EPA compression-ignition
           certification data — the evidence base both questions draw on.</div></div>
-      <span class="status draft">Draft · unverified</span>
+      <span class="status ok">Verified</span>
+    </div>
+    <div class="pf-row">
+      <div><div class="pf-name">FUELDIV</div>
+        <div class="pf-what">Specification divergence register: where the certification
+          fuel envelope, the federal in-market requirement and the commercial standards
+          fail to overlap. Sizes the problem this page opens with, by specification.</div></div>
+      <span class="status ok">Verified</span>
     </div>
     <div class="pf-row">
       <div><div class="pf-name">Fuel Divergence Atlas</div>
-        <div class="pf-what">State-level estimates of in-service fuel property divergence.
-          Sizes the problem this page opens with.</div></div>
-      <span class="status">Not started</span>
+        <div class="pf-what">State-level in-service divergence, weighted by consumption
+          volumes. Asks what is actually burned rather than what is permitted.</div></div>
+      <span class="status draft">Draft · unverified</span>
     </div>
     <div class="pf-row">
       <div><div class="pf-name">ADCVI</div>
@@ -334,11 +343,15 @@ a{text-decoration-thickness:1px;text-underline-offset:2px}
   </div>
 
   <div class="state">
-    <p><b>Current state — September 2026.</b> The program is newly founded. CIDEX v1.0 is
-      built and passes its integrity checks but has <b>not</b> completed the verification gate
-      and is <b>not</b> published. No DOI has been minted. No manuscript has been submitted.
-      This page describes a research agenda and a first dataset in draft, and claims nothing
-      further.</p>
+    <p><b>Current state — September 2026.</b> Two projects have completed verification.
+      <b>CIDEX v1.0.0</b> is verified — pipeline reproduced, five engine families
+      spot-checked against EPA's own certificate records, checklist signed — and public at
+      <a href="https://github.com/osariemenimafidon/cidex">github.com/osariemenimafidon/cidex</a>.
+      <b>FUELDIV v1.0</b> is verified, its 24 values confirmed against the consensus
+      standards themselves. <b>No DOI has been minted for either</b>; deposit is pending.
+      No manuscript has been submitted to a journal and the preprint is not peer reviewed.
+      This page describes a research agenda, two verified datasets and one in draft, and
+      claims nothing further.</p>
   </div>
 
   <footer>

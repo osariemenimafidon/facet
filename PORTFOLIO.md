@@ -6,8 +6,9 @@ Status is recorded honestly. A project moves to **Published** only when a DOI re
 
 | Project | Answers | Status | Location | DOI |
 |---|---|---|---|---|
-| CIDEX | Evidence base, Q1 + Q2 | Draft built, unverified | `~/Documents/cidex` | — |
-| Fuel Divergence Atlas | Sizes the problem | Not started | — | — |
+| CIDEX | Evidence base, Q1 + Q2 | **Verified** | `~/Documents/cidex` · [GitHub](https://github.com/osariemenimafidon/cidex) | pending deposit |
+| FUELDIV | Where the certification, federal and commercial fuel envelopes fail to overlap | **Verified** | `~/Documents/fueldiv` | pending deposit |
+| FDA (Fuel Divergence Atlas) | State-level in-service divergence, consumption-weighted | Draft built, unverified | `~/Documents/fda` | — |
 | ADCVI | Q2 — evidence that exists today | Not started | — | — |
 | Fuel-Related Failure Corpus | Q1 — does the gap show in service | Not started | — | — |
 | certdata / enginefamily | Infrastructure | Not started | — | — |

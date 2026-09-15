@@ -25,6 +25,9 @@ longer share a property envelope.
 The specifications make this concrete. EN 590 sets automotive diesel density at
 **820–845 kg/m³** (temperate grades) with a minimum cetane number of 51. EN 15940,
 which covers the paraffinic fuels sold as renewable diesel, sets **765–800 kg/m³**.
+Both figures are recorded, with their standard and table, in FUELDIV's divergence
+register (`~/Documents/fueldiv`, `data/processed/divergence_register.csv`), where each
+was confirmed against the standard itself rather than a secondary source.
 These ranges do **not overlap**. A fuel that is legally and commercially "diesel"
 can arrive at the injector 5–9% less dense than the fuel the engine was calibrated
 and certified on — and US renewable diesel production capacity has been climbing,
@@ -102,15 +105,33 @@ Status is stated honestly. Nothing below has a DOI yet.
 
 | Project | What it is | Answers | Status |
 |---|---|---|---|
-| **CIDEX** | Harmonized engine-family-level panel of EPA compression-ignition certification data | Evidence base for Q1 and Q2 | **Draft built, unverified** |
-| **Fuel Divergence Atlas** | State-level estimates of in-service fuel property divergence | Sizes the problem in §1 | Not started |
+| **CIDEX** | Harmonized engine-family-level panel of EPA compression-ignition certification data | Evidence base for Q1 and Q2 | **Verified, pending deposit** |
+| **FUELDIV** | Specification divergence register: where the certification fuel envelope, the federal in-market requirement and commercial fuel standards fail to overlap | Sizes the problem in §1, by specification | **Verified, pending deposit** |
+| **FDA** | Fuel Divergence Atlas: state-level in-service divergence, weighted by consumption volumes | Sizes the problem in §1, by what is actually burned | Draft built, unverified |
 | **ADCVI** | Evidence map of adaptive/learning-based diesel control, scored on a validation-maturity rubric | Q2 — what evidence exists today | Not started |
 | **Fuel-Related Failure Corpus** | Labelled corpus of fuel-related failure modes from open defect records | Q1 — does the gap show up in service | Not started |
 | **certdata / enginefamily** | Open tooling for EPA certification records and family-name decoding | Infrastructure | Not started |
 
 ## 6. Current state — September 2026
 
-The program is newly founded. CIDEX v1.0 is built and passes its integrity checks
-but has **not** completed the verification gate and is **not** published. No DOI has
-been minted. No manuscript has been submitted. This document describes a research
-agenda and a first dataset in draft, and claims nothing further.
+The programme is newly founded and two projects have completed verification.
+
+**CIDEX v1.0.0** is verified: the pipeline reproduced, five named engine families
+spot-checked against EPA's own certificate records, and the checklist signed. It is
+public at <https://github.com/osariemenimafidon/cidex> with a technical report and a
+data paper preprint. **No DOI has been minted yet**; deposit is pending.
+
+**FUELDIV v1.0** is verified: the 24 values drawn from paywalled consensus standards
+confirmed against the standards themselves, the API-gravity conversion checked, the
+reading of 40 CFR 1090.305(c) ruled on, and five CFR transcriptions spot-checked.
+**No DOI yet**; deposit pending.
+
+The two fuel-divergence projects are deliberately distinct rather than duplicates.
+FUELDIV asks whether the *specifications* overlap — what a fuel is permitted to be.
+FDA asks what is actually *burned*, weighting in-service consumption volumes by state.
+A fuel can be compliant and still sit far from the certification envelope, which is why
+both questions are worth asking separately. FDA remains in draft.
+
+No manuscript has been submitted to a journal. The preprint is not peer reviewed. This
+document describes a research agenda, two verified datasets, and one in draft, and claims
+nothing further.
