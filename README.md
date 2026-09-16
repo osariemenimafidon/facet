@@ -46,8 +46,17 @@ See [`PORTFOLIO.md`](PORTFOLIO.md). Status vocabulary, in order, with no step sk
 
 `Not started` → `Spec'd` → `Draft built` → `Verified` → `Published (DOI resolves)`
 
-**Nothing in this program has a DOI yet.** No manuscript has been submitted. CIDEX, the
-first project, is at `Draft built` and has not completed its verification gate.
+Two projects are at `Verified`: **CIDEX**, whose pipeline has been reproduced and whose
+spot-checks were confirmed against EPA's own certificate tool, and **FUELDIV**, whose
+commercial standard values were confirmed against the standards themselves. Both are
+public on GitHub and both carry a technical preprint. The **Fuel Divergence Atlas** is at
+`Draft built`: its pipeline runs and its integrity checks pass, but its component property
+envelopes have not been checked against their governing specifications, so its publication
+gate blocks and every document in it carries a draft stamp.
+
+**Nothing in this program has a DOI yet, and no manuscript has been submitted.** Neither
+is an oversight: a DOI requires a deposit and a submission is a personal attestation. Both
+are the investigator's to make.
 
 ## Licence
 

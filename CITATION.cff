@@ -1,0 +1,28 @@
+cff-version: 1.2.0
+message: "If you refer to this research program, please cite it as below."
+type: dataset
+title: "FACET: Fuel-Adaptive Control Evidence & Transferability — research program, portfolio and evidence log"
+abstract: >-
+  An independent research program on fuel-property-adaptive fuel injection control for
+  heavy-duty and off-highway compression-ignition engines, and on the verification
+  evidence and cross-program applicability criteria that would allow such control to
+  reach production. Contains the program statement, the project register, the evidence
+  log and the program page.
+authors:
+  - family-names: Imafidon
+    given-names: Osariemen
+    orcid: "https://orcid.org/0009-0006-3069-4674"
+    affiliation: "Independent Researcher"
+version: 1.0.0
+date-released: 2026-09-16
+license: CC-BY-4.0
+repository-code: "https://github.com/osariemenimafidon/facet"
+url: "https://osariemenimafidon.github.io/facet/"
+keywords:
+  - fuel injection control
+  - compression ignition
+  - diesel engines
+  - engine certification
+  - renewable diesel
+  - verification evidence
+  - evidence transferability
