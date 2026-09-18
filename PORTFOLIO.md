@@ -6,9 +6,9 @@ Status is recorded honestly. A project moves to **Published** only when a DOI re
 
 | Project | Answers | Status | Location | Preprint | DOI |
 |---|---|---|---|---|---|
-| CIDEX | Evidence base, Q1 + Q2 | **Verified** | `~/Documents/cidex` · [GitHub](https://github.com/osariemenimafidon/cidex) | `docs/CIDEX_preprint.pdf` | pending deposit |
-| FUELDIV | Where the certification, federal and commercial fuel envelopes fail to overlap | **Verified** | `~/Documents/fueldiv` · [GitHub](https://github.com/osariemenimafidon/fueldiv) | `docs/FUELDIV_preprint.pdf` | pending deposit |
-| FDA (Fuel Divergence Atlas) | State-level in-service divergence, consumption-weighted | Draft built, unverified | `~/Documents/fda` · [GitHub](https://github.com/osariemenimafidon/fda) | draft-stamped | — |
+| CIDEX | Evidence base, Q1 + Q2 | **Published** | `~/Documents/cidex` · [GitHub](https://github.com/osariemenimafidon/cidex) | [10.31224/8233](https://doi.org/10.31224/8233) | [10.5281/zenodo.22761791](https://doi.org/10.5281/zenodo.22761791) |
+| FUELDIV | Where the certification, federal and commercial fuel envelopes fail to overlap | **Published** | `~/Documents/fueldiv` · [GitHub](https://github.com/osariemenimafidon/fueldiv) | [preprint](https://doi.org/10.5281/zenodo.22822591) | [10.5281/zenodo.22822591](https://doi.org/10.5281/zenodo.22822591) |
+| FDA (Fuel Divergence Atlas) | State-level in-service divergence, consumption-weighted | **Published** | `~/Documents/fda` · [GitHub](https://github.com/osariemenimafidon/fda) | [preprint](https://doi.org/10.5281/zenodo.22822535) | [10.5281/zenodo.22822535](https://doi.org/10.5281/zenodo.22822535) |
 | ADCVI | Q2 — evidence that exists today | Not started | — | — | — |
 | Fuel-Related Failure Corpus | Q1 — does the gap show in service | Not started | — | — | — |
 | certdata / enginefamily | Infrastructure | Not started | — | — | — |

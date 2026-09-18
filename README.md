@@ -54,9 +54,21 @@ public on GitHub and both carry a technical preprint. The **Fuel Divergence Atla
 envelopes have not been checked against their governing specifications, so its publication
 gate blocks and every document in it carries a draft stamp.
 
-**Nothing in this program has a DOI yet, and no manuscript has been submitted.** Neither
-is an oversight: a DOI requires a deposit and a submission is a personal attestation. Both
-are the investigator's to make.
+All three are now **Published** under the vocabulary above, which means a DOI resolves:
+
+| Project | DOI | Also |
+|---|---|---|
+| CIDEX | [10.5281/zenodo.22761791](https://doi.org/10.5281/zenodo.22761791) | preprint [10.31224/8233](https://doi.org/10.31224/8233) on engrXiv |
+| FUELDIV | [10.5281/zenodo.22822591](https://doi.org/10.5281/zenodo.22822591) | |
+| FDA | [10.5281/zenodo.22822535](https://doi.org/10.5281/zenodo.22822535) | v2, superseding a pre-correction v1 |
+
+The Atlas's history is worth stating rather than hiding. Its first deposit carried cetane
+ceilings that no standard sets, which understated the uncertainty on every cetane result.
+That was found by cross-referencing its assumed values against those FUELDIV had already
+verified, corrected, and published as version 2 with the reason recorded in the version
+notes. Version 1 remains resolvable. A programme that claims a verification discipline
+should be judged on what it does when the discipline catches something, and this is that
+record.
 
 ## Licence
 
