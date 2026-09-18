@@ -1,6 +1,6 @@
 # FACET — project register
 
-Program page: https://osariemenimafidon.github.io/facet/ · Repository: https://github.com/osariemenimafidon/facet
+Program page: https://osariemenimafidon.github.io/facet/ · Repository: https://github.com/osariemenimafidon/facet · DOI: [10.5281/zenodo.22823180](https://doi.org/10.5281/zenodo.22823180)
 
 Status is recorded honestly. A project moves to **Published** only when a DOI resolves.
 
