@@ -24,6 +24,9 @@ identifiers:
   - type: doi
     value: "10.5281/zenodo.22823181"
     description: "Version 1.0.0."
+  - type: doi
+    value: "10.5281/zenodo.22833841"
+    description: "Version 1.0.1, this version."
 repository-code: "https://github.com/osariemenimafidon/facet"
 url: "https://osariemenimafidon.github.io/facet/"
 keywords:
