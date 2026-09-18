@@ -56,12 +56,19 @@ gate blocks and every document in it carries a draft stamp.
 
 All three are now **Published** under the vocabulary above, which means a DOI resolves:
 
-| Project | DOI | Also |
+Each project deposits the **manuscript** and the **data and pipeline** separately, because
+they are different objects and a reader may want to cite either. Cite the concept DOI: it
+carries no version number and always resolves to the newest.
+
+| Project | Manuscript | Data and pipeline |
 |---|---|---|
-| CIDEX | [10.5281/zenodo.22761791](https://doi.org/10.5281/zenodo.22761791) | preprint [10.31224/8233](https://doi.org/10.31224/8233) on engrXiv |
-| FUELDIV | [10.5281/zenodo.22822591](https://doi.org/10.5281/zenodo.22822591) | |
-| FDA | [10.5281/zenodo.22822535](https://doi.org/10.5281/zenodo.22822535) | v2, superseding a pre-correction v1 |
-| FACET (this programme) | [10.5281/zenodo.22823180](https://doi.org/10.5281/zenodo.22823180) | working paper; the programme statement itself |
+| CIDEX | [10.31224/8233](https://doi.org/10.31224/8233) (engrXiv) | [10.5281/zenodo.22761791](https://doi.org/10.5281/zenodo.22761791) |
+| FUELDIV | [10.5281/zenodo.22822591](https://doi.org/10.5281/zenodo.22822591) | [10.5281/zenodo.22833312](https://doi.org/10.5281/zenodo.22833312) |
+| FDA | [10.5281/zenodo.22822535](https://doi.org/10.5281/zenodo.22822535) | [10.5281/zenodo.22833317](https://doi.org/10.5281/zenodo.22833317) |
+| FACET | [10.5281/zenodo.22823180](https://doi.org/10.5281/zenodo.22823180) | — the programme statement is the work |
+
+The FUELDIV and FDA manuscripts are also in production at engrXiv; only CIDEX's is posted
+there so far.
 
 The Atlas's history is worth stating rather than hiding. Its first deposit carried cetane
 ceilings that no standard sets, which understated the uncertainty on every cetane result.
